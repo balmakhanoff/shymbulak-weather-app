@@ -1,0 +1,140 @@
+@import '../../assets/styles/main.scss';
+
+footer {
+  background-color: $COLOR_BLACK;
+  color: $COLOR_LIGHT_GREY;
+  @include adaptive_value('padding-top', 92, 30, 1);
+  @include adaptive_value('padding-right', 20, 10, 1);
+  @include adaptive_value('padding-left', 20, 10, 1);
+  @include adaptive_value('padding-bottom', 54, 30, 1);
+
+  a {
+    color: inherit;
+    @include adaptive_value('font-size', 18, 14, 1);
+    line-height: 120%;
+
+    @media (hover:hover) {
+      &:hover {
+        color: $COLOR_WHITE;
+      }
+    }
+  }
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  height: max-content;
+
+  @media (max-width: 1035px) {
+    display: block;
+    margin-bottom: 30px;
+
+    .footer-logo {
+      margin-bottom: 30px;
+    }
+  }
+
+
+  .footer-title {
+    color: $COLOR_WHITE;
+    font-weight: 500;
+    line-height: 120%;
+    @include adaptive_value('font-size', 21, 17, 1);
+  }
+
+  .footer-logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @include adaptive_value('row-gap', 62, 20, 1);
+
+    .apps {
+      display: flex;
+      flex-direction: column;
+      row-gap: 16px;
+
+      @media (max-width: 1035px) {
+        display: none;
+      }
+
+      a {
+        display: block;
+      }
+    }
+  }
+
+  .footer-menu {
+    display: flex;
+    column-gap: 82px;
+
+    ul {
+
+      li a {
+        padding: 8px 0;
+        display: block;
+
+        &:hover {
+          @media (hover:hover) {
+            color: $COLOR_WHITE;
+          }
+        }
+      }
+    }
+
+    @media (max-width: 1035px) {
+      justify-content: space-between;
+    }
+
+    @media screen and (max-width: 750px) {
+      flex-wrap: wrap;
+      justify-content: center;
+      row-gap: 30px;
+
+      @media screen and (max-width: 300px) {
+        background-color: red;
+      }
+    }
+
+  }
+
+
+
+  .footer-contacts {
+    .social-networks {
+      display: flex;
+      column-gap: 8px;
+      @include adaptive_value('column-gap', 16, 8, 1);
+    }
+  }
+}
+
+.footer-line {
+  border: 1px solid #4F5864;
+  margin: 54px 0 24px 0;
+}
+
+.apps2 {
+  display: none;
+
+  a:first-child {
+    margin-right: 30px;
+  }
+}
+
+.footer-rights {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 1035px) {
+
+  .footer-line,
+  .footer-rights {
+    display: none;
+  }
+
+  .apps2 {
+    display: block;
+  }
+}

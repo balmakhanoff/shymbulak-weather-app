@@ -1,0 +1,95 @@
+@import '../../../../assets/styles/main.scss';
+
+.weather-hourly {
+  @include adaptive-value('padding', 32, 10, 1);
+  border: 1px solid $COLOR_BORDER;
+  border-radius: 20px;
+  height: 100%;
+  width: 50%;
+
+  @media screen and (max-width: 767px) {
+    & {
+      width: 100%;
+    }
+  }
+
+
+  .time-hourly {
+    font-weight: 600;
+    @include adaptiv-font(24, 16);
+    line-height: 29px;
+    color: $COLOR_BLACK;
+  }
+
+  .card-line {
+    border: 1px solid $COLOR_BORDER;
+    @include adaptive-value('margin-top', 24, 10, 1);
+    @include adaptive-value('margin-bottom', 24, 10, 1);
+  }
+
+  .hours-content-flex {
+    justify-content: space-between;
+  }
+
+  .hours-content {
+    position: relative;
+    padding: 16px;
+    overflow-x: hidden;
+    height: 77px;
+    width: 70%;
+  }
+
+  button {
+    font-size: 20px;
+    padding: 8px 12px;
+    border-radius: 50px;
+    box-shadow: 3px 3px 3px $COLOR_LIGHT_GREY;
+  }
+
+  .hour-card-wrapper {
+    position: absolute;
+    left: 0;
+    height: 77px;
+  }
+
+  .hour-card {
+    // padding: 0 20px;
+    @include adaptive-value('padding-right', 25, 10, 1);
+    @include adaptive-value('padding-left', 25, 10, 1);
+  }
+
+  .hour-time {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: #6D7784;
+    @include adaptiv-font(16, 12);
+    margin-bottom: 10px;
+  }
+
+  .hour-degree {
+    font-weight: 500;
+    line-height: 29px;
+    text-align: center;
+    color: #4F5864;
+    @include adaptiv-font(24, 20);
+  }
+  #hour-img,
+  .hour-img {
+    object-fit: cover;
+    @include adaptive-value('width', 32, 16, 1);
+  }
+}
+
+@media (hover:hover) {
+  .weather-hourly {
+    button {
+      transition: .3s all linear;
+      &:hover {
+        cursor: pointer;
+        box-shadow: -3px -3px 3px $COLOR_BLUE, 3px 3px 3px $COLOR_LIGHT_GREY;
+      }
+    }
+  }
+}

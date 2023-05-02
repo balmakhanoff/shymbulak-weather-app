@@ -1,0 +1,125 @@
+@import '../../../../assets/styles/main.scss';
+
+.weather-daily {
+  background: $COLOR_BG_GRAY;
+  @include adaptive-value('padding', 32, 10, 1);
+  border-radius: 20px;
+  @include adaptive-value('margin-top', 40, 20, 1);
+  width: 100%;
+  box-sizing: border-box;
+
+  .time-daily {
+    @include adaptiv-font(24, 16);
+    font-weight: 600;
+    line-height: 29px;
+  }
+
+  .daily-line {
+    border: 1px solid $COLOR_WHITE;
+    @include adaptive-value('margin-top', 24, 15, 1);
+    @include adaptive-value('margin-bottom', 24, 15, 1);
+  }
+
+  .daily-content-holder {
+    position: relative;
+    height: 220px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+
+  .daily-card-wrapper {
+    left: 0;
+    top: 0;
+    position: absolute;
+  }
+
+  .daily-card {
+    @include adaptive-value('padding-right', 20, 10, 1);
+    @include adaptive-value('padding-left', 20, 10, 1);
+    width: 94px;
+  }
+
+  .day {
+    font-weight: 500;
+    font-size: 18px;
+    @include adaptiv-font(18, 14);
+    line-height: 22px;
+    color: $COLOR_BLACK;
+  }
+
+  .day-date {
+    @include adaptiv-font(14, 10);
+    line-height: 17px;
+    color: #6D7784;
+    margin-top: 4px;
+  }
+
+  img {
+    @include adaptive-value('padding-top', 27, 10, 1);
+    @include adaptive-value('padding-bottom', 27, 10, 1);
+  }
+
+  .min-weather,
+  .max-weather {
+    line-height: 19px;
+    color: $COLOR_LIGHT_GREY;
+    @include adaptiv-font(16, 12);
+
+    span {
+      font-weight: 500;
+      line-height: 22px;
+      color: $COLOR_GREY;
+      @include adaptiv-font(18, 14);
+    }
+  }
+}
+
+@media screen and (max-width: 540px) {
+
+  .daily-content-holder {
+    min-height: 690px;
+    width: 100%;
+  }
+
+  .daily-card-wrapper {
+    display: flex;
+    flex-direction: column;
+    position: initial;
+    min-width: 100%;
+  }
+
+  .daily-card {
+    // max-width: 302px;
+    box-sizing: border-box;
+    padding-left: 0;
+    padding-right: 0;
+    display: flex;
+    justify-content: center;
+    flex-grow: 0;
+    // column-gap: 15px;
+    @include adaptive-value('column-gap', 100, 10, 0);
+    @include adaptive-value('min-width', 400, 300, 0);
+    align-items: center;
+    border-bottom: 1px solid $COLOR_BORDER;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    img {
+      margin: 0;
+      display: inline-block;
+      @include adaptive-value('width', 42, 20, 2);
+    }
+  }
+
+  .day {
+    width: 58px;
+  }
+
+  .day-date {
+    display: none;
+  }
+
+
+}

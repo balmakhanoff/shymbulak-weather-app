@@ -1,0 +1,83 @@
+@import '../../../../assets/styles/main.scss';
+
+.weather-card {
+  background: $COLOR_BLUE;
+  @include adaptive-value('padding', 32, 10, 1);
+  border-radius: 20px;
+  width: 50%;
+  color: $COLOR_WHITE;
+  height: 100%;
+
+  @media screen and (max-width: 767px) {
+    & {
+      width: 100%;
+    }
+  }
+
+  .time-now {
+    @include adaptiv-font(24, 16);
+    font-weight: 600;
+    line-height: 29px;
+  }
+
+  .card-info {
+    @include adaptive-value('margin-top', 24, 10, 1);
+    justify-content: flex-start;
+    @include adaptive-value('column-gap', 60, 0, 1);
+  }
+
+  .weather-img {
+    @include adaptive-value('width', 147, 50, 1);
+    @include adaptive-value('height', 147, 50, 1);
+
+    img {
+      display: block;
+    }
+  }
+
+  .weather {
+    @include adaptiv-font(18, 14);
+    font-weight: 600;
+    line-height: 22px;
+  }
+
+  .degree {
+    @include adaptiv-font(64, 20);
+    font-weight: 700;
+    line-height: 77px;
+  }
+
+  .card-line {
+    opacity: 0.3;
+    border: 1px solid $COLOR_WHITE;
+    width: 239px;
+    @include adaptive-value('width', 260, 50, 1);
+    @include adaptive-value('margin-top', 16, -10, 1);
+    @include adaptive-value('margin-bottom', 16, 8, 1);
+  }
+
+  .weather-stats {
+    @include adaptive-value('column-gap', 32, 0, 1);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .time-now {
+    display: none;
+  }
+
+  #degree-card {
+    @include adaptiv-font(94, 50);
+  }
+
+  div.weather-img {
+    @include adaptive-value('width', 200, 80, 2);
+    @include adaptive-value('height', 200, 80, 2);
+  }
+
+  .weather-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}

@@ -1,0 +1,103 @@
+@import '../../assets/styles/main.scss';
+
+header .container {
+  color: $COLOR_BLACK;
+  @include adaptiv-font(21, 14);
+  line-height: 25px;
+}
+
+
+
+.element-props {
+  @include adaptive-value('padding', 16, 11.5, 1);
+  border: 1px solid $COLOR_BORDER;
+  border-radius: 12px;
+  box-sizing: border-box;
+  @include adaptive-value('height', 56, 40, 1);
+}
+
+.header-wrapper {
+  @include adaptive-value('padding', 20, 12, 1);
+  justify-content: space-between;
+  border-bottom: 1px solid $COLOR_BORDER;
+
+  img {
+    display: block;
+  }
+
+  .header-left-side {
+    @include adaptive-value('column-gap', 32, 8, 1);
+
+    .header-logo {
+      padding: 0 32px;
+    }
+
+    .burger-menu,
+    .burger-btn-header-close {
+      @include adaptive-value('height', 56, 40, 1);
+      display: none;
+    }
+
+    .active-weather {
+      background: #FCBF0D;
+      padding: 6px 10px;
+      border-radius: 12px;
+    }
+  }
+
+  .center-logo {
+    display: none;
+  }
+
+  .header-right-side {
+    @include adaptive-value('column-gap', 32, 8, 1);
+  }
+}
+
+@media screen and (max-width: 1133px) {
+
+  .header-wrapper {
+
+    .left-logo,
+    .header-live,
+    .header-weather,
+    .header-season,
+    .header-lang {
+      display: none;
+    }
+  }
+
+  .header-wrapper .center-logo {
+    display: block;
+  }
+
+  #burger-menu {
+    display: block;
+  }
+  #burger-menu-close {
+    display: none;
+  }
+}
+
+@media (hover: hover) {
+
+  .header-logo,
+  .burger-menu,
+  .header-live,
+  .header-weather,
+  .header-season,
+  .header-search,
+  .center-logo,
+  .header-lang,
+  .header-user,
+  .header-favorite,
+  .header-cart,
+  .burger-btn-header-close {
+    transition: .4s all linear;
+
+    &:hover {
+      cursor: pointer;
+      transform: translateY(10%);
+    }
+  }
+}
